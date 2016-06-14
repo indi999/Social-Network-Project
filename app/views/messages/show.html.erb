@@ -1,7 +1,11 @@
 <h1>SHOW Pages</h1>
 <h3><%= @message.title %></h3>
 <h5><%= @message.description %></h5>
+
 <br />
+<h3>Replay Comment</h3>
+<%= render 'comments/form' %>
+
 <%= link_to 'Edit Message', edit_message_path(@message) %>
 <%= link_to 'Delete Message', message_path(@message), method: :delete, data: {confirm: "Are ypu shure"} %>
 <br /><br /><hr />
