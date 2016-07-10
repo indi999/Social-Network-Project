@@ -15,6 +15,9 @@ class CommentsController < ApplicationController
     end
   end
 
+  def nenad
+  end
+
   def edit
   end
 
