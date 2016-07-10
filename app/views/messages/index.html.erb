@@ -1,6 +1,8 @@
 <h1>All Messages</h1>
 <p>© <%= Date.today.year %> Let`s Talk About ...</p>
-
+<% if user_signed_in? %>
+  <p><%= current_user.email %></p>
+<% end %>
 <br />
 <div class="col-md-6 col-md-offset-2">
     <% @messages.each do |message| %>
