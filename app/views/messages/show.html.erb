@@ -1,12 +1,22 @@
 <h1>SHOW Pages</h1>
 <h3><%= @message.title %></h3>
+<p>Posted by: <%= @message.user.email %></p></ br>
+<p>Time ago: <%= time_ago_in_words(@message.created_at) %> ago</p>
 <h5><%= @message.description %></h5>
 
+<% if user_signed_in? %>
+  <% if @message.user_id == current_user.id %>
+    <%= link_to 'Edit Message', edit_message_path(@message) %>
+    <%= link_to 'Delete Message', message_path(@message), method: :delete, data: {confirm: "Are ypu shure"} %>
+  <% end %>
+<% end %>
+
 <br />
+<h3>Comment</h3>
+<%= render @message.comments %>
+
 <h3>Replay Comment</h3>
 <%= render 'comments/form' %>
 
-<%= link_to 'Edit Message', edit_message_path(@message) %>
-<%= link_to 'Delete Message', message_path(@message), method: :delete, data: {confirm: "Are ypu shure"} %>
 <br /><br /><hr />
 <%= link_to 'back', root_path %>

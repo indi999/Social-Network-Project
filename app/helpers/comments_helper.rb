@@ -1,2 +1,2 @@
-module ComentsHelper
+module CommentsHelper
 end
