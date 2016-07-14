@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
   end
 
   def my_message
-    @messages = current_user.messages.order("created_at DESC")
+    
   end
 
   def show

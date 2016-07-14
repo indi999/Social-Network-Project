@@ -7,4 +7,6 @@ Rails.application.routes.draw do
      resources :comments
   end
 
+  get "messages/my_message"
+
 end
